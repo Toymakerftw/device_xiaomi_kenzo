@@ -18,6 +18,12 @@
 
 set -e
 
+# Required!
+export DEVICE=kenzo
+export VENDOR=xiaomi
+
+export DEVICE_BRINGUP_YEAR=2016
+
 INITIAL_COPYRIGHT_YEAR=2017
 
 # Load extract_utils and do some sanity checks
@@ -26,7 +32,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 AOSP_ROOT="$MY_DIR"/../../..
 
-HELPER="$AOSP_ROOT"/vendor/aosp/build/tools/extract_utils.sh
+HELPER="$AOSP_ROOT"/vendor/ancient/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -34,10 +40,10 @@ fi
 . "$HELPER"
 
 # Initialize the helper for common
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$AOSP_ROOT" true
+setup_vendor "$DEVICE" "$VENDOR" "$ROOT" true
 
 # Copyright headers and guards
-write_headers "kenzo hydrogen"
+write_headers "kenzo"
 
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
@@ -59,3 +65,5 @@ if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     # We are done!
     write_footers
 fi
+
+./../../$VENDOR/$DEVICE/setup-makefiles.sh $@
