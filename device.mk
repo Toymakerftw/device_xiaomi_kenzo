@@ -401,8 +401,8 @@ endif
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service-qti \
-    android.hardware.power.stats@1.0-service.mock
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service
 
 # Qualcomm dependencies
 PRODUCT_PACKAGES += \
