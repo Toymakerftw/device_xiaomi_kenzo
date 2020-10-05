@@ -14,8 +14,8 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_kenzo.mk
+    $(LOCAL_DIR)/bliss_kenzo.mk
 
 COMMON_LUNCH_CHOICES := \
-    havoc_kenzo-userdebug \
-    havoc_kenzo-eng
+    bliss_kenzo-userdebug \
+    bliss_kenzo-eng
