@@ -20,15 +20,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from kipper device
 $(call inherit-product, device/xiaomi/kenzo/device.mk)
 
-# Inherit some common BlissOS stuff.
-$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
+# Inherit some common Xtended stuff.
+$(call inherit-product, vendor/xtended/config/common_full_phone.mk)
+
+# Maintainer
+XTENDED_MAINTAINER := toymaker
 
 
 # Set those variables here to overwrite the inherited values.
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := kenzo
-PRODUCT_NAME := bliss_kenzo
+PRODUCT_NAME := xtended_kenzo
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Redmi Note 3
 TARGET_VENDOR := Xiaomi
@@ -51,9 +54,6 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOT_ANIMATION_RES := 1080
 
 USE_CCACHE=0
-
-BLISS_BUILDTYPE=OFFICIAL
-BLISS_MAINTAINER=Magicxavi
 
 PRODUCT_PACKAGES += \
     AdvancedControls \

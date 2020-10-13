@@ -14,8 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/bliss_kenzo.mk
+    $(LOCAL_DIR)/xtended_kenzo.mk
 
 COMMON_LUNCH_CHOICES := \
-    bliss_kenzo-userdebug \
-    bliss_kenzo-eng
+    xtended_kenzo-userdebug
